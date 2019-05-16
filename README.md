@@ -4,6 +4,13 @@
 
 In this homework, you'll make a React app to browse through the characters in Game of Thrones.
 
+### Getting Started:
+
+1. Fork and Clone this repository
+1. cd into the directory
+1. Run `npm install`
+1. Make sure to install axios!
+1. Open up App.js and get to work!
 1. Look at an example of the API data in the characters endpoint:
 
     [`https://www.anapioficeandfire.com/api/characters?page=1&pageSize=50`](https://www.anapioficeandfire.com/api/characters?page=1&pageSize=50)
