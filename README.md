@@ -21,6 +21,7 @@ In this homework, you'll make a React app to browse through the characters in Ga
    Hint: This would be a good place to map over components
    <br>
    Hint: Some characters don't have names, so you'll have to use their first alias in this case.
+   Hint: some characters have a "books" array; rendering thse could be another good place to use map.
 
 ## Bonus
 1. Add a "Next" Button. When a user clicks on the button, make an AJAX call to the next page of results in the API, and replace the displayed list of characters with the new results.
