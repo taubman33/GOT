@@ -2,28 +2,40 @@
 
 [An API of Ice and Fire](https://www.anapioficeandfire.com/) is an open-access REST API that includes information about characters, houses, and books from the action-packed high-fantasy epic.
 
-In this homework, you'll make a React app to browse through the characters in Game of Thrones.
+In this homework, you'll create a React application to browse through the characters in Game of Thrones.
 
 ### Getting Started:
 
-1. Fork and Clone this repository
-1. cd into the directory
-1. Run `npm install`
-1. Make sure to install axios!
-1. Open up App.js and get to work!
-1. Look at an example of the API data in the characters endpoint:
+1. Fork and Clone.
+1. Within the cloned directory, spin up a new React app.
+1. cd into the app.
+1. Install axios and react-router-dom along withthe rest of the React dependencies.
+1. Open up App.js in your code editor and get to work!
+1. This assignment must have at least **6 commits**.
 
-    [`https://www.anapioficeandfire.com/api/characters?page=1&pageSize=50`](https://www.anapioficeandfire.com/api/characters?page=1&pageSize=50)
+### API and State
+1. This app is going to require state. Take some time to prepare and setup with your preferred `App.js` structure.
+1. An API call is needed! What imports should be included?
+1. Look at an example of the API data for the characters endpoint: [`https://www.anapioficeandfire.com/api/characters?page=1&pageSize=50`](https://www.anapioficeandfire.com/api/characters?page=1&pageSize=50)
+    - You can also look at the [documentation for this endpoint](https://www.anapioficeandfire.com/Documentation#characters) if you find that useful.
+1. On the page load, make an Axios request to the above characters endpoint, and set the character data from the JSON response into state.
 
-   There's also [documentation on this endpoint](https://www.anapioficeandfire.com/Documentation#characters) if it's useful.
-1. On page load, make an AJAX request to the first page of the characters endpoint, and render each separate character into into it's own component.
-<br>
-   Hint: This would be a good place to map over components
-   <br>
-   Hint: Some characters don't have names, so you'll have to use their first alias in this case.
-   Hint: some characters have a "books" array; rendering thse could be another good place to use map.
+### Rendering and React Router
+1. Render each character's name from state individually into a component (one character per component instance). Feel free to include some basic, additional character info.
+   - This would be a good time to use a `.map()`.
+   - Some characters may not have names, so you'll have to find some way to account for this (perhaps they use an alias?). Do not skip these characters.
+1. Use `react-router-dom` to make it so when the user clicks on one of these character names, they are routed to a URL/path that displays detailed information about the character.
+    - There are several things that need to happen to use React Router. What do you need to import? What changes need to be made to the `App.js` export? What changes need to be made to the `index.js` file?
+    - For now, don't worry about trying to make a new API call for this character. Set the clicked character to a new piece of state and use that to render data in the character's route. **Be aware that your app will break if you try to load your app directly on a character's page.** Why would that be...?
+    - You may need to get creative with your `<Link>`. Perhaps you can write a method that helps with building the path.
+    - You'll want to use `:slug` notation in your routes so that you don't have to hardcode individual character names.
+1. Include a "back" button on the character detail page route that sends the user back to the list of all characters.
 
-## Bonus
-1. Add a "Next" Button. When a user clicks on the button, make an AJAX call to the next page of results in the API, and replace the displayed list of characters with the new results.
-1. Add a "Previous" Button, which should have similar functionality to the "Next" button but in the reverse direction.
-1. Make your page responsive, and add some nice style to the results.
+### Bonus: More API Calls
+Choose at at least one of the following and complete:
+- Add a "Next" Button to the character detail page. When a user clicks on the button, make a new Axios call to the next page of results in the API, and replace the displayed list of characters with the new results. Add a "Previous" Button, which should have similar functionality to the "Next" button but in the reverse direction. You may want to check the [documentation](https://www.anapioficeandfire.com/Documentation#characters) for this one.
+
+- Use `props.match.params` to make it so directly loading a character detail page actually works. This will be trickier than it should be since the characters don't come with a unique ID in their JSON. The solution here will likely require some retooling of your Link/Route structure at the very least.
+
+### CSS Bonus
+Images aren't included with the API response. Find a nice GoT related image or logo, add it to an assets directory in `src` and figure out how to insert it into the character links on the route with the full list of characters.
