@@ -26,18 +26,18 @@ In this homework, you'll create a React application to browse through the charac
 1. Render each character's name from state individually into a component (one character per component instance). Feel free to include some basic, additional character info.
    - This would be a good time to use a `.map()`.
    - Some characters may not have names, so you'll have to find some way to account for this (perhaps they use an alias?). Do not skip these characters.
-1. Use `react-router-dom` to make it so when the user clicks on one of these character names, they are routed to a URL/path that displays detailed information about the character.
+1. Use `react-router-dom` to make it so when the user clicks on one of these character names, they are routed away from this index of characters to a route that only displays detailed information about that character. We'll call this our "Show" route.
     - There are several things that need to happen to use React Router. What do you need to import? What changes need to be made to the `App.js` export? What changes need to be made to the `index.js` file?
-    - For now, don't worry about trying to make a new API call for this character. Set the clicked character to a new piece of state and use that to render data in the character's route. **Be aware that your app will break if you try to load your app directly on a character's page.** Why would that be...?
+    - For now, don't worry about trying to make a new API call for characters shown on the Show route. Set the clicked character to a new piece of state and use that to render data in the character's route. **Be aware that your app will break if you try to load your app directly on a character's page.** Why would that be...?
     - You may need to get creative with your `<Link>`. Perhaps you can write a method that helps with building the path.
     - You'll want to use `:slug` notation in your routes so that you don't have to hardcode individual character names.
-1. Include a "back" button on the character detail page route that sends the user back to the list of all characters.
+1. Include a "back" button on the Show route that sends the user back to the full index of characters.
 
 ### Bonus: More API Calls
 Choose at at least one of the following and complete:
-- Add a "Next" Button to the character detail page. When a user clicks on the button, make a new Axios call to the next page of results in the API, and replace the displayed list of characters with the new results. Add a "Previous" Button, which should have similar functionality to the "Next" button but in the reverse direction. You may want to check the [documentation](https://www.anapioficeandfire.com/Documentation#characters) for this one.
+- Add a "Next" Button to the Show route. When a user clicks on the button, make a new Axios call to get the next character in the index, and send the user to that character's page. Add a "Previous" Button, which should have similar functionality to the "Next" button but in the reverse direction. You may want to check the [documentation](https://www.anapioficeandfire.com/Documentation#characters) for this one.
 
 - Use `props.match.params` to make it so directly loading a character detail page actually works. This will be trickier than it should be since the characters don't come with a unique ID in their JSON. The solution here will likely require some retooling of your Link/Route structure at the very least.
 
 ### CSS Bonus
-Images aren't included with the API response. Find a nice GoT related image or logo, add it to an assets directory in `src` and figure out how to insert it into the character links on the route with the full list of characters.
+Images aren't included with the API response. Find a nice GoT related image or logo, add it to an assets directory in `src` and figure out how to insert it into the character links on your character index route.
