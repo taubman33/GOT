@@ -23,14 +23,13 @@ In this homework, you'll create a React application to browse through the charac
 1. On the page load, make an Axios request to the above characters endpoint, and set the character data from the JSON response into state.
 
 ### Rendering and React Router
-1. Render each character's name from state individually into a component (one character per component instance). Feel free to include some basic, additional character info.
-   - This would be a good time to use a `.map()`.
-   - Some characters may not have names, so you'll have to find some way to account for this (perhaps they use an alias?). Do not skip these characters.
-1. Use `react-router-dom` to make it so when the user clicks on one of these character names, they are routed away from this index of characters to a route that only displays detailed information about that character. We'll call this our "Show" route.
+1. Create an index of characters on one page by rendering each character's name from state individually into a component (one character per component instance). Feel free to include some additional character info if you like, but not all of it.
+   - Some characters do not have names, so you'll have to find some way to account for this. Use conditional rendering to display an alias for these characters.
+1. Use `react-router-dom` to make it so when the user clicks on a character's names, they are routed away from this index of characters to a route that only displays detailed information about that specific character. We'll call this the "Show" route.
     - There are several things that need to happen to use React Router. What do you need to import? What changes need to be made to the `App.js` export? What changes need to be made to the `index.js` file?
     - For now, don't worry about trying to make a new API call for characters shown on the Show route. Set the clicked character to a new piece of state and use that to render data in the character's route. **Be aware that your app will break if you try to load your app directly on a character's page.** Why would that be...?
     - You may need to get creative with your `<Link>`. Perhaps you can write a method that helps with building the path.
-    - You'll want to use `:slug` notation in your routes so that you don't have to hardcode individual character names.
+    -  It may be helpful to use `:slug` notation to help with setting up these routes.
 1. Include a "back" button on the Show route that sends the user back to the full index of characters.
 
 ### Bonus: More API Calls
