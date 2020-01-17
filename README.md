@@ -11,7 +11,7 @@ In this homework, you'll create a React application to browse through the charac
 1. Fork and Clone.
 1. Within the cloned directory, spin up a new React app.
 1. cd into the app.
-1. Install axios and react-router-dom along withthe rest of the React dependencies.
+1. Install axios and react-router-dom along with all the other React dependencies.
 1. Open up App.js in your code editor and get to work!
 1. This assignment must have at least **6 commits**.
 
