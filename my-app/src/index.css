@@ -5,9 +5,30 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("./components/sigil.png");
+  background-color: red;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+
+
+  }
+
+
+/* body {
+background: src='';
+background-position: cover
+background-something:fixed
+color: white; */
+
+
+h1{
+    color: red;
+
+}
+
+h2 { 
+    color: white;
 }
