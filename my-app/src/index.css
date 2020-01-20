@@ -1,34 +1,73 @@
 body {
   margin: 0;
+  background-color: black;
   background-image: url("./components/sigil.png");
-  background-color: red;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-
-
-  }
-
-header { 
-  background-color: rgba(201, 176, 176, 0.6);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
 }
 
 
-article{
-  background-color: rgba(201, 206, 206, 0.6)
+.character-index {
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  width: 90%;
+  justify-content: space-evenly;
+}
+
+
+.character-info {
+  background-color: rgba(67, 9, 9, .8);
+  border: 1px solid white;
+
+  margin-bottom: 7em;
+
+}
+
+
+button {
+  display: block;
+  margin: 3px 5px;
+  width: 22%;
+  background-color: rgba(67, 9, 9, .8);
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 15px;
+}
+
+.Home {
+
+  color: white;
+  font-size: 36px;
+  
+}
+
+
+.siteTitle {
+border: 1px solid white;
+
 }
 
 h1{
-    color: red;
+  background-color:rgba(67, 9, 9, .8);
+  font-family: 'Cinzel', serif;
+  font-size: 60px;
+  letter-spacing: 3px;
+  color: rgb(198, 179, 9)
+}
+
+
+h2 { 
+  font-family: 'Cinzel', serif;
+  color: white;
 
 }
 
 p{
-  color: white;
+  font-family: 'Cinzel', serif;
+  color: rgb(148, 200, 178);
 }
 
-h2 { 
-    color: white;
-}

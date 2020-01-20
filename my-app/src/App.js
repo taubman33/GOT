@@ -51,19 +51,29 @@ function App() {
     //our main return here, with navbar links to get around
     return (
       <div className="App">
-        <nav>
-          <Link exact='true' activeclassname='active' to='/'>
-            Home
-          </Link>
-        </nav>
+
+
         <main>
-      
+         <div className = "siteTitle">
           <h1>Game of Thrones Characters</h1>
           <Switch>
             <Route exact path='/' component={(props) => {return <CharacterIndex {...props} characters={characters} />}} />
             <Route exact path='/:char_id' component={(props) => {return <CharacterList {...props} characters={characters} />}} />
           </Switch>
+          </div>
+
         </main>
+       <br></br>
+       <footer>
+        <div className ="Home">
+          <nav>
+          <Link exact='true' activeclassname='active' to='/'>
+            Home
+          </Link>
+        </nav>
+        </div>
+        </footer>
+
       </div>
     );
 
