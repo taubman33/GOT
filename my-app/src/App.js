@@ -2,24 +2,26 @@
 
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import CharacterList from '.components/CharacterList';
-import Characters from '.components/Characters';
-import axios from 'axios';
+// import CharacterList from '.components/CharacterList';
+// import Characters from '.components/Characters';
+// import axios from 'axios';
 import { Route, Link, Switch } from 'react-router-dom';
 
 // //linking the API
-const url = 'https://anapioficeandfire.com/api/characters/583'
+const url = 'https://www.anapioficeandfire.com/api/characters?page=1&pageSize=50'
 
-//I guess we are keeping this functional for now? and the other will be class based?
+
+//setting up the App function
 function App() {
   
+  //initalizing states here
   const [Characters, CharacterList]= useState([])  
  
   //our fetch data app, working with async. I am finally feeling decent about the usage of the fat arrow
   const fetchData = async () => {
   try {
     let response = await axios.get(URL)
-    listCharacters(response.data)
+    CharacterList(response.data)
   } catch (err) {
     console.log(`Seven Hells! We have an error at ${err}!`)
   }
@@ -31,21 +33,32 @@ function App() {
 
   }, [])
 
+  //this prevents undefined strings from loadin up and messing everything up
+  //like D&D did to season 8
+  if (!characters.length) {
+    return (
+      <div className="App">
+        <h1>Game of Thrones API Project</h1>
+       </div>
+       )
+    } 
   return (
-    <div className="App">
-      <header>
-      <h1> Game of Thrones API</h1>
-      </header>
-    
-    <article>
-      <p>info is going here</p>
-      <button onClick =""> Hear me Roar!</button>
-      <Characters />
-      <CharacterList />
-    </article>
-   
-    </div>
-  );
+
+      <div className="App">
+        <nav>
+          <Link exact='true' activeclassname='active' to='/'>
+            Home
+          </Link>
+        </nav>
+        <main>
+          <h1>Ours is the Fury!</h1>
+          <Switch>
+            <Route exact path='/' component={(props) => {return <CharacterList {...props} characters={characters} />}} />
+            <Route exact path='/:char_id' component={(props) => {return <Characters {...props} characters={characters} />}} />
+          </Switch>
+        </main>
+      </div>
+    )
   }
 
 
