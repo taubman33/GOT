@@ -1,49 +1,55 @@
-//bringing all of the important things in, like Dany bringing the Dothraki across the sea
-
 import React, { useState, useEffect } from 'react';
 import './App.css';
-// import CharacterList from '.components/CharacterList';
-// import Characters from '.components/Characters';
-// import axios from 'axios';
+import axios from 'axios';
+import CharacterIndex from './components/CharacterIndex';
+import Characters from './components/Characters';
+import CharacterList from './components/CharacterList';
 import { Route, Link, Switch } from 'react-router-dom';
 
-// //linking the API
-const url = 'https://www.anapioficeandfire.com/api/characters?page=1&pageSize=50'
+//setting up the foundation, the URL -> the merging of the crown and the faith
+const URL = 'https://www.anapioficeandfire.com/api/characters?page=1&pageSize=50'
 
+//valar functionalis
 
-//setting up the App function
 function App() {
-  
-  //initalizing states here
-  const [Characters, CharacterList]= useState([])  
- 
-  //our fetch data app, working with async. I am finally feeling decent about the usage of the fat arrow
-  const fetchData = async () => {
-  try {
-    let response = await axios.get(URL)
-    CharacterList(response.data)
-  } catch (err) {
-    console.log(`Seven Hells! We have an error at ${err}!`)
-  }
-}
-  
-  //setting up the fetchData function to go 
-  useEffect(() =>{
-    fetchData();
 
+  //the array for our characters
+  const [characters, setCharacters] = useState([])
+ 
+  //basic fetchdata function here. our characters are the data pulling from
+  //like the unsullied bringing in new intiates
+  //except we aren't castrating the data
+  const fetchData = async () => { 
+    try {
+      let response = await axios.get(URL)
+      setCharacters(response.data)
+
+    //basic catch
+    } catch (err) {
+      console.log(`Seven Hells! You've made an error ${err}!`)
+      console.log(err.response)
+    }
+
+  }
+
+
+  //setting up the different ways the data will run after being fetched
+ useEffect(() => {
+    fetchData();
   }, [])
 
-  //this prevents undefined strings from loadin up and messing everything up
-  //like D&D did to season 8
+
+  //we need the ! there so no empty strings can come up
   if (!characters.length) {
     return (
       <div className="App">
-        <h1>Game of Thrones API Project</h1>
-       </div>
-       )
-    } 
-  return (
+        <h1>Game of Thrones</h1>
+      </div>
+    )
+  } 
 
+    //our main return here, with navbar links to get around
+    return (
       <div className="App">
         <nav>
           <Link exact='true' activeclassname='active' to='/'>
@@ -51,15 +57,16 @@ function App() {
           </Link>
         </nav>
         <main>
-          <h1>Ours is the Fury!</h1>
+      
+          <h1>Game of Thrones Characters</h1>
           <Switch>
-            <Route exact path='/' component={(props) => {return <CharacterList {...props} characters={characters} />}} />
-            <Route exact path='/:char_id' component={(props) => {return <Characters {...props} characters={characters} />}} />
+            <Route exact path='/' component={(props) => {return <CharacterIndex {...props} characters={characters} />}} />
+            <Route exact path='/:char_id' component={(props) => {return <CharacterList {...props} characters={characters} />}} />
           </Switch>
         </main>
       </div>
-    )
-  }
+    );
 
+}
 
-  export default App;
+export default App
