@@ -7,7 +7,6 @@ function Characters(props) {
     //setting up the props for what will be called for each
     const name = props.name
     const alias = props.alias
-
     const charName = () => {
         return (name) ? name : alias
     }

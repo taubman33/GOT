@@ -21,9 +21,11 @@ function CharacterList(props) {
     return (
         <div className="character-info">
             {selectedCharacter[0].name ? <h2>{selectedCharacter[0].name}</h2> : <h2>{selectedCharacter[0].aliases}</h2>}
+            {selectedCharacter[0].alias ? <p>Alias: {selectedCharacter[0].alias}</p> : <p></p>}
             {selectedCharacter[0].culture ? <p>Culture: {selectedCharacter[0].culture}</p> : <p>No culture affiliation.</p>}
             {selectedCharacter[0].gender ? <p>Gender: {selectedCharacter[0].gender}</p> : <p>No gender affiliation.</p>}
             {selectedCharacter[0].born ? <p>Born {selectedCharacter[0].born}</p> : <p></p>}
+            {selectedCharacter[0].died ? <p>Died {selectedCharacter[0].died}</p> : <p></p>}
         </div>
     )
 }

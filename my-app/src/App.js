@@ -7,13 +7,15 @@ import CharacterList from './components/CharacterList';
 import { Route, Link, Switch } from 'react-router-dom';
 
 //setting up the foundation, the URL -> the merging of the crown and the faith
-const URL = 'https://www.anapioficeandfire.com/api/characters?page=1&pageSize=50'
+const URL = 'https://www.anapioficeandfire.com/api/characters?page=10&pageSize=70'
 
 //valar functionalis
 
 function App() {
 
   //the array for our characters
+  //a nice layout to hold our characters in
+  //like the inside of the House of Black and White
   const [characters, setCharacters] = useState([])
  
   //basic fetchdata function here. our characters are the data pulling from
@@ -25,11 +27,11 @@ function App() {
       setCharacters(response.data)
 
     //basic catch
+    //if it gets bad, we set spark the wildfire logged under the castle
     } catch (err) {
       console.log(`Seven Hells! You've made an error ${err}!`)
       console.log(err.response)
     }
-
   }
 
 
@@ -40,6 +42,7 @@ function App() {
 
 
   //we need the ! there so no empty strings can come up
+  //like the writers needed a good ending but nothing came up
   if (!characters.length) {
     return (
       <div className="App">
@@ -49,13 +52,13 @@ function App() {
   } 
 
     //our main return here, with navbar links to get around
+    //faster than Gendry north of the wall
     return (
       <div className="App">
 
-
         <main>
          <div className = "siteTitle">
-          <h1>Game of Thrones Characters</h1>
+          <h1>Game of Thrones</h1>
           <Switch>
             <Route exact path='/' component={(props) => {return <CharacterIndex {...props} characters={characters} />}} />
             <Route exact path='/:char_id' component={(props) => {return <CharacterList {...props} characters={characters} />}} />

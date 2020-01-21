@@ -54,9 +54,10 @@ border: 1px solid white;
 h1{
   background-color:rgba(67, 9, 9, .8);
   font-family: 'Cinzel', serif;
-  font-size: 60px;
+  font-size: 72px;
+  font-style: bold;
   letter-spacing: 3px;
-  color: rgb(198, 179, 9)
+  color: rgb(198, 179, 9);
 }
 
 
@@ -71,3 +72,7 @@ p{
   color: rgb(148, 200, 178);
 }
 
+footer {
+background-color: rgba(67, 9, 9, .8);
+
+}
