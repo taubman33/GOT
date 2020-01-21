@@ -7,7 +7,7 @@ import CharacterList from './components/CharacterList';
 import { Route, Link, Switch } from 'react-router-dom';
 
 //setting up the foundation, the URL -> the merging of the crown and the faith
-const URL = 'https://www.anapioficeandfire.com/api/characters?page=10&pageSize=70'
+const URL = 'https://www.anapioficeandfire.com/api/characters?page=12&pageSize=70'
 
 //valar functionalis
 
@@ -53,12 +53,13 @@ function App() {
 
     //our main return here, with navbar links to get around
     //faster than Gendry north of the wall
+
     return (
       <div className="App">
 
         <main>
          <div className = "siteTitle">
-          <h1>Game of Thrones</h1>
+          <h1>A Who's Who of Westeros</h1>
           <Switch>
             <Route exact path='/' component={(props) => {return <CharacterIndex {...props} characters={characters} />}} />
             <Route exact path='/:char_id' component={(props) => {return <CharacterList {...props} characters={characters} />}} />
@@ -71,7 +72,8 @@ function App() {
         <div className ="Home">
           <nav>
           <Link exact='true' activeclassname='active' to='/'>
-            Home
+          Back home!
+          {/* <img src="./components/TargSig.jpg" alt="Home"></img> */}
           </Link>
         </nav>
         </div>

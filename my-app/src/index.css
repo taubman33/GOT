@@ -20,7 +20,6 @@ body {
 .character-info {
   background-color: rgba(67, 9, 9, .8);
   border: 1px solid white;
-
   margin-bottom: 7em;
 
 }
@@ -32,19 +31,16 @@ button {
   width: 22%;
   background-color: rgba(67, 9, 9, .8);
   color: white;
-  font-size: 1rem;
   text-transform: uppercase;
+  font-size: 1rem;
   letter-spacing: 3px;
   border-radius: 15px;
 }
 
 .Home {
-
   color: white;
-  font-size: 36px;
-  
+  font-size: 36px; 
 }
-
 
 .siteTitle {
 border: 1px solid white;
@@ -54,7 +50,7 @@ border: 1px solid white;
 h1{
   background-color:rgba(67, 9, 9, .8);
   font-family: 'Cinzel', serif;
-  font-size: 72px;
+  font-size: 76px;
   font-style: bold;
   letter-spacing: 3px;
   color: rgb(198, 179, 9);

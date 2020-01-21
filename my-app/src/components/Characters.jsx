@@ -5,6 +5,7 @@ import React from "react"
 function Characters(props) {
 
     //setting up the props for what will be called for each
+    //raising our state, like the Night King raising his army after Hardhome
     const name = props.name
     const alias = props.alias
     const charName = () => {
