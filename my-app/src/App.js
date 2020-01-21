@@ -7,6 +7,9 @@ import CharacterList from './components/CharacterList';
 import { Route, Link, Switch } from 'react-router-dom';
 
 //setting up the foundation, the URL -> the merging of the crown and the faith
+//i got tired of just looking at the A names (good lord there are a lot of characters in ASOIAF)
+//so I went to page 12 instead so I could see the J names
+
 const URL = 'https://www.anapioficeandfire.com/api/characters?page=12&pageSize=70'
 
 //valar functionalis
@@ -15,7 +18,7 @@ function App() {
 
   //the array for our characters
   //a nice layout to hold our characters in
-  //like the inside of the House of Black and White
+  //like the panels inside of the House of Black and White
   const [characters, setCharacters] = useState([])
  
   //basic fetchdata function here. our characters are the data pulling from
@@ -36,6 +39,8 @@ function App() {
 
 
   //setting up the different ways the data will run after being fetched
+  //kneel, a common button, and arise, Ser Button, A Knight of the ReactRealm
+  //who will fetch the data for each respective characters
  useEffect(() => {
     fetchData();
   }, [])
@@ -84,4 +89,7 @@ function App() {
 
 }
 
+
+//exporting things out
+//like Jorah bringing slaves out of Essos
 export default App

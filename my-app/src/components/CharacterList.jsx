@@ -18,6 +18,8 @@ function CharacterList(props) {
     console.log(selectedCharacter[0])
 
 
+    //returning the info for each character
+    //trying my hardest to not drop any  C bombs like the Hound would here
     return (
         <div className="character-info">
             {selectedCharacter[0].name ? <h2>{selectedCharacter[0].name}</h2> : <h2>{selectedCharacter[0].aliases}</h2>}
